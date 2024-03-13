@@ -12,7 +12,7 @@ function About() {
 Our trainers are experienced professionals who are passionate about helping you succeed. Whether you're just starting out or looking to take your fitness to the next level, we're here to support and motivate you every step of the way.</p>
    
 
-    <div className='flex justify-between items-center mt-20 mb-20'>
+    <div className='flex-row sm:flex justify-between items-center mt-20 mb-20'>
       <YouTube videoId={videoId} style={{width:"500px"}}/>
       <YouTube videoId={videosId} style={{width:"500px"}}/>
     </div>

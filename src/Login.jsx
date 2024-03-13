@@ -1,26 +1,51 @@
 import React,{useState} from 'react';
 import rope from './rope.jpg';
+import axios from 'axios';
+import { toast } from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 
 function Login() {
+const[email,setEmail] = useState("")
+const[password,setPassword] = useState("")
 const[showPassword,setshowPasssword] = useState(false)
 const Navigate = useNavigate();
+
+const handleLogin = async()=>{
+   try{
+      const response = await axios.post(
+         "http://localhost:3000/api/user/loginuser",
+         {email,password}
+      )
+      toast.success(response.data.message)
+      
+      setEmail("")
+      setPassword("")
+   }
+   catch(error){
+      console.log(error.message)
+      toast.error(error.response.data.message)
+   }
+}
+
   return (
     <>
 
 <div className='relative'>
-    <img src={rope} style={{width:"1000px",height:"500px",objectfit:"contain"}}/>
+    <img src={rope} style={{width:"1100px",height:"500px",objectfit:"contain"}}/>
     </div>
     <div className='absolute' style={{top:"130px",left:"380px"}}>
      <div className='border border-white bg-white rounded-md shadow-2xl' style={{width:"300px",height:"260px"}}>
     <h1 className='font-bold text-center text-2xl mt-4'>Login</h1>
-    <input className='border border-gray-500 mt-5 p-3 ml-7 pl-3 rounded-lg' placeholder="enter your email here..." style={{width:"240px",height:"35px"}}/><br/><br/>
+    <input className='border border-gray-500 mt-5 p-3 ml-7 pl-3 rounded-lg' placeholder="enter your email here..." style={{width:"240px",height:"35px"}}
+   value={email} onChange={(event)=>setEmail(event.target.value)}
+    /><br/><br/>
 
    <div className='relative'>
     <input className='border border-gray-500 ml-7 pl-3 rounded-lg' 
     placeholder="enter your password here..." 
     style={{width:"240px",height:"35px"}}
     type={showPassword ? "password" : "text"}
+    value={password} onChange={(event)=>setPassword(event.target.value)}
     />
    </div>
    <div className='absolute' style={{top:"135px", left:"245px"}}>
@@ -32,7 +57,9 @@ const Navigate = useNavigate();
 <br/>
    
     <button className='border border-black bg-green-900 hover:bg-green-600
-     text-white rounded-lg p-1 px-5' style={{marginLeft:"60px"}}>Login</button>
+     text-white rounded-lg p-1 px-5' style={{marginLeft:"60px"}}
+     onClick={handleLogin}
+     >Login</button>
 
     <button className='border border-black bg-green-900 hover:bg-green-600
      text-white rounded-lg p-1 ml-7 px-2' style={{marginLeft:"10px"}}
@@ -41,7 +68,8 @@ const Navigate = useNavigate();
     </div>
 </div>
     
-    <div className='border border-black flex justify-end p-10 text-white' style={{backgroundColor:"#210101"}}>
+    <div className='border border-black flex justify-end p-10 text-white' 
+    style={{backgroundColor:"#210101"}}>
     <div>
       <h1><b>Gym</b></h1>
       <p>No Pain No Gain</p>
@@ -81,7 +109,6 @@ const Navigate = useNavigate();
     <div className='text-center'>
     <p>@2024 is all right &copy; reserved</p>
     </div>
-
      
     </>
   )

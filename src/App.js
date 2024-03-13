@@ -1,5 +1,6 @@
 import React from 'react';
-import { BrowserRouter as Router , Routes , Route, Form } from 'react-router-dom';
+import {Toaster} from 'react-hot-toast';
+import { BrowserRouter as Router , Routes , Route } from 'react-router-dom';
 import About from './About';
 import Blog from './Blog';
 import Classes from './Classes';
@@ -12,6 +13,7 @@ function App() {
   return (
     <>
       <Router>
+       <Toaster/>
         <Header/>
         <Routes>
           <Route path='/' element={<Home/>}/>
@@ -20,6 +22,7 @@ function App() {
           <Route path='/Blog' element={<Blog/>}/>
           <Route path='/Form' element={<FormComponent/>}/>
           <Route path='/Login' element={<Login/>}/>
+          <Route path="/*" element={"Error 404 Page not found"} />
         </Routes>
       </Router>
     </>

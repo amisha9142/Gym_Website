@@ -7,7 +7,7 @@ function Classes() {
   return (
     <>
     <h1 className='font-bold text-4xl text-center mt-10 mb-10'>Training Programs</h1>
-    <div className='flex justify-end'>
+    <div className='flex-row sm:flex justify-end'>
     <h1 className='pl-10'><span className='text-2xl font-bold'>Beginner Program</span><br/><br/>
     <span>Our beginner program is designed for those who are new to working out or have been away from the gym for an extended period of time. This program is focused on building a strong foundation of strength and conditioning while also introducing proper form and technique for common exercises.</span><br/><br/>
     <span className='text-2xl font-bold'>$99/month</span>
@@ -16,8 +16,9 @@ function Classes() {
     </div><br/><br/><br/>
 
 
-    <div className='flex justify-end'>
-    <h1 className='pl-10'><span className='text-2xl font-bold'>Advanced Program</span><br/><br/>
+    <div className='flex-row sm:flex justify-end'>
+    <h1 className='pl-10'><span className='text-2xl font-bold'>Advanced Program
+    </span><br/><br/>
     <span>Our advanced program is designed for experienced gym-goers who are looking to take their training to the next level. This program is focused on progressive overload and advanced training techniques to help you achieve your fitness goals.</span><br/><br/>
     <span className='text-2xl font-bold'>$149/month</span>
     </h1><br/>
@@ -25,8 +26,9 @@ function Classes() {
     </div><br/><br/><br/>
 
 
-    <div className='flex justify-end'>
-    <h1 className='pl-10'><span className='text-2xl font-bold'>Personal Training</span><br/><br/>
+    <div className='flex-row sm:flex justify-end'>
+    <h1 className='pl-10'><span className='text-2xl font-bold'>Personal Training
+    </span><br/><br/>
     <span>For those who prefer one-on-one coaching, we offer personal training sessions with our certified trainers. Our trainers will work with you to create a customized training program based on your specific goals and needs.</span><br/><br/>
     <span className='text-2xl font-bold'>Starting at $79/session</span>
     </h1><br/>

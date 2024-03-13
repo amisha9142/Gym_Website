@@ -12,14 +12,16 @@ function Home() {
    </div>
 
 
-   <div className='flex'>
+   <div className='flex-row sm:flex md:flex'>
      <div className='border border-gray-200 rounded-lg shadow-2xl' style={{width:"290px",height:"290px",margin:"30px", marginTop:"70px",textAlign:"center"}}><span className='text-2xl font-bold'>Basic <br/>$29.99/mo</span><br/><br/>
      "Our basic gym plan is perfect for beginners and seasoned fitness enthusiasts alike, providing a supportive environment to achieve your fitness goals."<br/><br/>
      <button className='border border-red-600 bg-red-500  text-blue-900 px-2 py-1 pb-1 rounded-lg  hover:bg-red-600 font-bold'><u>Select Plan</u></button>
      </div>
 
      <div className='border border-gray-200 rounded-lg shadow-2xl'style={{width:"290px",height:"290px",margin:"30px",marginTop:"70px",textAlign:"center"}}><span className='text-2xl font-bold'>Pro<br/>$49.99/mo</span><br/><br/>
-     "Upgrade to our Pro Plan for an enhanced fitness experience, tailored to meet the needs of serious athletes and fitness enthusiasts fitness experience."<br/><br/>
+     "Upgrade to our Pro Plan for an enhanced fitness experience, tailored to meet the needs of serious athletes and fitness enthusiasts fitness experience
+     enhanced fitness.
+     ."<br/><br/>
      <button className='border  border-red-600 bg-red-500  text-blue-900 px-2 py-1 pb-1 rounded-lg  hover:bg-red-600 font-bold'><u>Select Plan</u></button>
      </div>
 
